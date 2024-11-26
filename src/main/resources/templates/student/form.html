@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Iscrivi un nuovo studente</title>
+</head>
+<body>
+    <h2>Iscrivi un nuovo studente</h2>
+    <form th:action="@{/student}" method="post" th:object="${student}">
+        <label for="firstname">Nome</label>
+        <input type="text" id="firstname" th:field="*{firstname}" required>
+        <br>
+        <label for="surname">Cognome</label>
+        <input type="text" id="surname" th:field="*{surname}" required>
+        <br>
+        <label for="dob">Data di nascita</label>
+        <input type="date" id="dob" th:field="*{dob}" required>
+        <br>
+        <label for="male">Maschio</label>
+        <input type="radio" id="male" value="m" th:field="*{sex}" >
+        <br>
+        <label for="female">Femmina</label>
+        <input type="radio" id="female" value="f" th:field="*{sex}" >
+        <br>
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" th:field="*{mail}" required>
+        <br>
+        <label for="phone">Numero di Telefono</label>
+        <input type="text" id="phone" th:field="*{phone}" required>
+        <br>
+        <label for="background">Background</label>
+        <textarea id="background" cols="30" rows="20" th:field="*{background}"></textarea>
+        <br>
+        <label for="education">Educazione</label>
+        <input type="text" id="education" th:field="*{education}" required>
+        <br>
+        <label for="isPref">Prefetto</label>
+        <input type="checkbox" id="isPref" th:field="*{isPref}" >
+    </form>
+</body>
+</html>
