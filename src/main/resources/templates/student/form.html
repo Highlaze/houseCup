@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>Iscrivi un nuovo studente</h2>
-    <form th:action="@{/student}" method="post" th:object="${student}">
+    <form th:action="@{/student/create}" method="post" th:object="${student}">
         <label for="firstname">Nome</label>
         <input type="text" id="firstname" th:field="*{firstname}" required>
         <br>
@@ -36,6 +36,18 @@
         <br>
         <label for="isPref">Prefetto</label>
         <input type="checkbox" id="isPref" th:field="*{isPref}" >
+        <label for="course">Corso:</label>
+        <select id="course" th:field="*{courseId}">
+            <option value = "0" disabled>Scegli una classe</option>
+            <option th:each="c : *{courses}" th:value="${c.id}" th:text="${c.name}"></option>
+        </select>
+        <label for="house">Casata:</label>
+        <select id="house" th:field="*{houseId}"> <!-- Menu a tendina per selezionare una casata, collegato al campo "houseId" -->
+            <option value = "0" disabled>Scegli una Casata</option>
+            <option th:each="h : *{houses}" th:value="${h.id}" th:text="${h.name}"></option> <!-- popola le opzioni con id e nome delle casate -->
+        </select>
+        <br>
+        <button type="submit">Registra Studente</button>
     </form>
 </body>
 </html>

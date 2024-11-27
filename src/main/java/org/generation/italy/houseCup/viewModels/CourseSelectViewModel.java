@@ -4,21 +4,21 @@ import org.generation.italy.houseCup.model.entities.Course;
 
 public class CourseSelectViewModel {
     private long id;
-    private String nome;
+    private String name;
 
     public CourseSelectViewModel(){
 
     }
 
-    public CourseSelectViewModel(long id, String nome) {
+    public CourseSelectViewModel(long id, String name) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
     }
 
     public static CourseSelectViewModel fromCourse(Course c){
         var cs = new CourseSelectViewModel();
         cs.setId(c.getId());
-        cs.setNome(c.getClassName());
+        cs.setName(c.getClassName());
         return cs;
     }
 
@@ -30,11 +30,11 @@ public class CourseSelectViewModel {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 }
