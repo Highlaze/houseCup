@@ -67,4 +67,5 @@ public class StudentController {
         model.addAttribute("student", svm); //aggiunge il view model dello studente al modello di Thymeleaf
         return "/student/details";
     }
+
 }

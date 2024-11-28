@@ -15,4 +15,5 @@ public interface RegisterService{
     Optional<House> findHouseById(long id);
     Student saveStudent(Student s);
     Optional<Student> findStudentById(long id);
+    List<Course> getActiveCourses();
 }
