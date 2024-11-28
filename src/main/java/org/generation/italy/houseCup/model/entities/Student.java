@@ -30,8 +30,7 @@ public class Student {
     @JoinColumn(name="house_id")
     private House house;
 
-    public Student() {
-    }
+    public Student() {}
 
     public Student(long id, String firstname, String surname,
                    LocalDate dob, char sex, String mail, String phone,
@@ -54,92 +53,69 @@ public class Student {
     public long getId() {
         return id;
     }
-
-
     public String getFirstname() {
         return firstname;
     }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
-
     public String getSurname() {
         return surname;
     }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
     public LocalDate getDob() {
         return dob;
     }
-
     public void setDob(LocalDate dob) {
         this.dob = dob;
     }
-
     public char getSex() {
         return sex;
     }
-
     public void setSex(char sex) {
         this.sex = sex;
     }
-
     public String getMail() {
         return mail;
     }
-
     public void setMail(String mail) {
         this.mail = mail;
     }
-
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
     public String getBackground() {
         return background;
     }
-
     public void setBackground(String background) {
         this.background = background;
     }
-
     public String getEducation() {
         return education;
     }
-
     public void setEducation(String education) {
         this.education = education;
     }
-
     public boolean getIsPref() {
         return isPref;
     }
-
     public void setIsPref(boolean isPref) {
         this.isPref = isPref;
     }
-
     public Course getCourse() {
         return course;
     }
-
     public void setCourse(Course course) {
         this.course = course;
     }
-
     public House getHouse() {
         return house;
     }
-
     public void setHouse(House house) {
         this.house = house;
     }

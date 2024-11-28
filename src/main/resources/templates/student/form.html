@@ -7,8 +7,15 @@
 <body>
     <h2>Iscrivi un nuovo studente</h2>
     <form th:action="@{/student/create}" method="post" th:object="${student}">
+        <!-- `th:action` definisce l'URL a cui inviare i dati (`/student/create`) -->
+        <!-- `method="post"` indica che i dati verranno inviati tramite POST -->
+        <!-- `th:object` collega il modello Thymeleaf (attributo `student`) con i campi del form -->
+
         <label for="firstname">Nome</label>
         <input type="text" id="firstname" th:field="*{firstname}" required>
+        <!-- `th:field` collega il campo HTML con il campo `firstname` nel modello `student` -->
+        <!-- `required` rende il campo obbligatorio -->
+
         <br>
         <label for="surname">Cognome</label>
         <input type="text" id="surname" th:field="*{surname}" required>
@@ -44,7 +51,9 @@
         <label for="house">Casata:</label>
         <select id="house" th:field="*{houseId}"> <!-- Menu a tendina per selezionare una casata, collegato al campo "houseId" -->
             <option value = "0" disabled>Scegli una Casata</option>
-            <option th:each="h : *{houses}" th:value="${h.id}" th:text="${h.name}"></option> <!-- popola le opzioni con id e nome delle casate -->
+
+            <!-- popola le opzioni con id e nome delle casate. *{houses} accede alla lista di casate creata in StudentController -->
+            <option th:each="h : *{houses}" th:value="${h.id}" th:text="${h.name}"></option>
         </select>
         <br>
         <button type="submit">Registra Studente</button>

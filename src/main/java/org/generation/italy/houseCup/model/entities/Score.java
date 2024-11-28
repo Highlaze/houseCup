@@ -22,9 +22,7 @@ public class Score {
     @JoinColumn(name="teacher_id")
     private Teacher teacher;
 
-    public Score(){
-
-    }
+    public Score(){}
 
     public Score(long id, int points, String motivation, LocalDate assign_date, Student student, Teacher teacher) {
         this.id = id;
@@ -35,44 +33,33 @@ public class Score {
         this.teacher = teacher;
     }
 
-
-
     public int getPoints() {
         return points;
     }
-
     public void setPoints(int points) {
         this.points = points;
     }
-
     public String getMotivation() {
         return motivation;
     }
-
     public void setMotivation(String motivation) {
         this.motivation = motivation;
     }
-
     public LocalDate getAssign_date() {
         return assign_date;
     }
-
     public void setAssign_date(LocalDate assign_date) {
         this.assign_date = assign_date;
     }
-
     public Student getStudent() {
         return student;
     }
-
     public void setStudent(Student student) {
         this.student = student;
     }
-
     public Teacher getTeacher() {
         return teacher;
     }
-
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
