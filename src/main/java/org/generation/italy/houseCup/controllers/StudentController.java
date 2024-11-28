@@ -23,7 +23,7 @@ import java.util.Optional;
 public class StudentController {
     private RegisterService registerService; //servizio che contiene la logica per gestire le operazioni relative a studenti, corsi e case.
 
-    @Autowired
+    @Autowired //invece di creare a mano un'istanza di una classe (new...), Spring la trova, la crea e la inietta automaticamente, NON OBBLIGATORIA
     public StudentController(RegisterService registerService) {
         this.registerService = registerService;
     }
