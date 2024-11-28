@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli Studente</title>
+</head>
+<body>
+  <p>
+    <span>Nome:</span>
+    <span th:text="${student.firstname}"></span> <!--valore del campo firstName dell'oggetto student-->
+  </p>
+  <p>
+    <span>Cognome:</span>
+    <span th:text="${student.surname}"></span>
+  </p>
+  <p>
+    <span>Data Di Nascita:</span>
+    <span th:text="${student.dob}"></span>
+  </p>
+  <p>
+    <span>Sesso:</span>
+    <span th:text="${student.sex}"></span>
+  </p>
+  <p>
+    <span>Email:</span>
+    <span th:text="${student.mail}"></span>
+  </p>
+  <p>
+    <span>Classe:</span>
+    <span th:text="${student.courseName}"></span>
+  </p>
+  <p>
+    <span>Casata:</span>
+    <span th:text="${student.houseName}"></span>
+  </p>
+</body>
+</html>

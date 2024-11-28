@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Scegli la classe</title>
+</head>
+<body>
+    <h2>Seleziona una classe</h2>
+    <form th:action="@{/student/student-class}" method="get">
+        <label for="course">Corso:</label>
+        <select id="course" name="id">
+            <option value = "0" disabled>Scegli una classe</option>
+            <option th:each="c : ${courses}" th:value="${c.id}" th:text="${c.name}"></option>
+        </select>
+        <br>
+        <button type="submit">Ricerca</button>
+    </form>
+</body>
+</html>
