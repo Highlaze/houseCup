@@ -7,9 +7,11 @@ import org.generation.italy.houseCup.model.repositories.CourseRepositoryJpa;
 import org.generation.italy.houseCup.model.repositories.HouseRepositoryJpa;
 import org.generation.italy.houseCup.model.repositories.StudentRepositoryJpa;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,5 +56,11 @@ public class RegisterServiceJpa implements RegisterService{
     @Override
     public Optional<Student> findStudentById(long id) {
         return studentRepo.findById(id);
+    }
+
+    @Override
+    public List<Course> getActiveCourses(){
+        LocalDate oggi = LocalDate.now();
+        return courseRepo.findByStartDateBeforeAndEndDateAfter(oggi, oggi);
     }
 }

@@ -73,4 +73,5 @@ public class StudentController {
         model.addAttribute("student", svm);
         return "/student/details";
     }
+
 }
