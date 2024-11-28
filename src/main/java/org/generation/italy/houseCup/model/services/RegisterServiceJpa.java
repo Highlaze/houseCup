@@ -7,6 +7,7 @@ import org.generation.italy.houseCup.model.entities.Teacher;
 import org.generation.italy.houseCup.model.repositories.CourseRepositoryJpa;
 import org.generation.italy.houseCup.model.repositories.HouseRepositoryJpa;
 import org.generation.italy.houseCup.model.repositories.StudentRepositoryJpa;
+import org.generation.italy.houseCup.model.repositories.TeacherRepositoryJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -19,12 +20,14 @@ public class RegisterServiceJpa implements RegisterService{
     private CourseRepositoryJpa courseRepo;
     private HouseRepositoryJpa houseRepo;
     private StudentRepositoryJpa studentRepo;
+    private TeacherRepositoryJpa teacherRepo;
 
     @Autowired
-    public RegisterServiceJpa(CourseRepositoryJpa courseRepo, HouseRepositoryJpa houseRepo, StudentRepositoryJpa studentRepo){
+    public RegisterServiceJpa(CourseRepositoryJpa courseRepo, HouseRepositoryJpa houseRepo, StudentRepositoryJpa studentRepo, TeacherRepositoryJpa teacherRepo){
         this.courseRepo = courseRepo;
         this.houseRepo = houseRepo;
         this.studentRepo = studentRepo;
+        this.teacherRepo = teacherRepo;
     }
 
     @Override
@@ -49,7 +52,7 @@ public class RegisterServiceJpa implements RegisterService{
 
     @Override
     public List<Teacher> findAllTeachers() { // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah
-        return List.of();
+        return teacherRepo.findAll();
     }
 
     @Override

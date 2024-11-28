@@ -6,8 +6,28 @@
 </head>
 <body>
     <form action="@{/score/create}" method="post" th:object="${SCORE}">
-
-
+        <label for="points">Points</label>
+        <input type="number" id="points" th:field="*{points}" required>
+        <br>
+        <label for="motivation">Motivation</label>
+        <input type="text" id="motivation" th:field="*{motivation}" required>
+        <br>
+        <label for="assign_date">Assign Date</label>
+        <input type="date" id="assign_date" th:field="*{assign_date}">
+        <br>
+        <label for="student">Student: </label>
+        <select id="student" th:field="*{student}">
+            <option value = "0" disabled>Scegli uno studente</option>
+            <option th:each="s : ${STUDENT}" th:value="${s.id}" th:text="${s.firstname}"></option>
+        </select>
+        <br>
+        <label for="teacher">Teacher: </label>
+        <select id="teacher" th:field="*{teacher}">Teacher
+            <option value = "0" disabled>Scegli un professore</option>
+            <option th:each="t : ${TEACHER}" th:value="${t.id}" th:text="${t.firstname}"></option>
+        </select>
+        <br>
+        <button type="submit">Registra Punteggio</button>
     </form>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli Studente</title>
+</head>
+<body>
+  <p>
+    <span>Punteggio assegnato: </span>
+    <span th:text="${SCORE.points}"></span> <!--valore del campo firstName dell'oggetto student-->
+  </p>
+  <p>
+    <span>Motivazione: </span>
+    <span th:text="${SCORE.motivation}"></span> <!--valore del campo firstName dell'oggetto student-->
+  </p>
+  <p>
+    <span>Data di assegnazione: </span>
+    <span th:text="${SCORE.assign_date}"></span> <!--valore del campo firstName dell'oggetto student-->
+  </p>
+  <p>
+    <span>Studente: </span>
+    <span th:text="${SCORE.student}"></span>
+  </p>
+  <p>
+    <span>Insegnante:</span>
+    <span th:text="${SCORE.teacher}"></span>
+  </p>
+</body>
+</html>
