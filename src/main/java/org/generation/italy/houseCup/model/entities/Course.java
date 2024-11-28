@@ -21,7 +21,7 @@ public class Course {
     private LocalDate endDate;
     @OneToMany(mappedBy = "course")
     private List<Student> students = new ArrayList<>();
-    @ManyToMany(mappedBy = "template.course")
+    @ManyToMany(mappedBy = "courses")
     private List<Teacher> teachers = new ArrayList<>();
     public Course(){
 
