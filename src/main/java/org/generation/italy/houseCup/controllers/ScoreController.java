@@ -26,13 +26,9 @@ public class ScoreController {
     }
     @GetMapping("/create")
     public String createScore(Model model){
-        System.out.println("Chiamato metodo create");
 
         List<Teacher> teacherList = registerService.findAllTeachers();
         List<Student> studentList = registerService.findAllStudents();
-
-        System.out.println("thlist" + teacherList.toString());
-        System.out.println("stlist" + studentList.toString());
 
         model.addAttribute("TEACHER", teacherList);
         model.addAttribute("STUDENT", studentList);
@@ -52,7 +48,7 @@ public class ScoreController {
         if(score.isEmpty()) {
             return "/score/error";
         }
-        model.addAttribute("SCORE", score);
+        model.addAttribute("SCORE", score.get());
         return "/score/details";
     }
 

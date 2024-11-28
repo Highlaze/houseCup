@@ -15,10 +15,6 @@ public class ScoreServiceJpa implements ScoreService{
         this.scoreRepositoryJpa = scoreRepositoryJpa;
     }
 
-    @Override
-    public Score addScore(Score score) {
-        return scoreRepositoryJpa.save(score);
-    }
 
     @Override
     public Score save(Score score) {
