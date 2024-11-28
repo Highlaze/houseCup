@@ -16,4 +16,5 @@ public interface RegisterService{
     Student saveStudent(Student s);
     Optional<Student> findStudentById(long id);
     List<Course> getActiveCourses();
+    List<Student> findStudentByCourseId(long courseId);
 }

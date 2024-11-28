@@ -63,4 +63,9 @@ public class RegisterServiceJpa implements RegisterService{
         LocalDate oggi = LocalDate.now();
         return courseRepo.findByStartDateBeforeAndEndDateAfter(oggi, oggi);
     }
+
+    @Override
+    public List<Student> findStudentByCourseId(long courseId) {
+        return studentRepo.findByCourseId(courseId);
+    }
 }

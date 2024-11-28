@@ -25,7 +25,8 @@ public class CourseController {
         List<CourseSelectViewModel> activeCourseViewModel = activeCourses.stream()
                 .map(CourseSelectViewModel::fromCourse)
                 .toList();
-        model.addAttribute("course",activeCourseViewModel);
-        return "/course/find-course";
+
+        model.addAttribute("courses",activeCourseViewModel);
+        return "/course/find-course-form";
     }
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Assegna Punteggio</title>
+</head>
+<body>
+<h2>Assegna Punteggio</h2>
+<form th:action="@{/score/create}" method="post" th:object="${score}">
+    <!-- `th:action` definisce l'URL a cui inviare i dati (`/score/create`) -->
+    <!-- `method="post"` indica che i dati verranno inviati tramite POST -->
+    <!-- `th:object` collega il modello Thymeleaf (attributo `score`) con i campi del form -->
+
+    <label for="points">Punteggio</label>
+    <input type="number" id="points" th:field="*{points}" required>
+    <!-- `th:field` collega il campo HTML con il campo `points` nel modello `score` -->
+    <!-- `required` rende il campo obbligatorio -->
+    <br>
+    <label for="motivation">Motivazione</label>
+    <input type="text" id="motivation" th:field="*{motivation}" required>
+    <br>
+    <label for="assign_date">Data di assegnazione</label>
+    <input type="date" id="assign_date" th:field="*{assign_date}" required>
+    <br>
+    <label for="student">Studente:</label>
+    <select id="student" th:field="*{studentId}">
+        <option value = "0" disabled>Scegli uno Studente</option>
+        <option th:each="s : *{student}" th:value="${s.id}" th:text="${s.name}"></option>
+    </select>
+    <label for="">Casata:</label>
+    <select id="house" th:field="*{houseId}"> <!-- Menu a tendina per selezionare una casata, collegato al campo "houseId" -->
+        <option value = "0" disabled>Scegli una Casata</option>
+
+        <!-- popola le opzioni con id e nome delle casate. *{houses} accede alla lista di casate creata in StudentController -->
+        <option th:each="h : *{houses}" th:value="${h.id}" th:text="${h.name}"></option>
+    </select>
+    <br>
+    <button type="submit">Registra Studente</button>
+</form>
+</body>
+</html>
