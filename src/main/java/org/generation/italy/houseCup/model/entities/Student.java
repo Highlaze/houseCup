@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="students")
@@ -29,14 +30,14 @@ public class Student {
     @ManyToOne
     @JoinColumn(name="house_id")
     private House house;
+    @OneToMany(mappedBy = "student")
+    private List<Score> scoreList;
 
     public Student() {
     }
 
-    public Student(long id, String firstname, String surname,
-                   LocalDate dob, char sex, String mail, String phone,
-                   String background, String education, boolean isPref,
-                   House house, Course course) {
+    public Student(long id, String firstname, String surname, LocalDate dob, char sex, String mail, String phone,
+                   String background, String education, boolean isPref, Course course, House house, List<Score> scoreList) {
         this.id = id;
         this.firstname = firstname;
         this.surname = surname;
@@ -47,14 +48,14 @@ public class Student {
         this.background = background;
         this.education = education;
         this.isPref = isPref;
-        this.house = house;
         this.course = course;
+        this.house = house;
+        this.scoreList = scoreList;
     }
 
     public long getId() {
         return id;
     }
-
 
     public String getFirstname() {
         return firstname;
@@ -142,5 +143,13 @@ public class Student {
 
     public void setHouse(House house) {
         this.house = house;
+    }
+
+    public List<Score> getScoreList() {
+        return scoreList;
+    }
+
+    public void setScoreList(List<Score> scoreList) {
+        this.scoreList = scoreList;
     }
 }

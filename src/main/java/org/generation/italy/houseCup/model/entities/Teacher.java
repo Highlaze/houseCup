@@ -30,15 +30,17 @@ public class Teacher {
             name = "teaching_assignments",
             joinColumns = @JoinColumn(name = "teacher_id"),
             inverseJoinColumns = @JoinColumn(name = "class_id")
-
     )
     private List<Course> courses = new ArrayList<>();
+    @OneToMany(mappedBy = "teacher")
+    private List<Score> scoreList;
 
     public Teacher(){
 
     }
 
-    public Teacher(long id, String firstname, String surname, LocalDate dob, char sex, String mail, String phone, LocalDate startdate, String nickname) {
+    public Teacher(long id, String firstname, String surname, LocalDate dob, char sex, String mail, String phone,
+                   LocalDate startdate, String nickname, List<Course> courses, List<Score> scoreList) {
         this.id = id;
         this.firstname = firstname;
         this.surname = surname;
@@ -48,6 +50,8 @@ public class Teacher {
         this.phone = phone;
         this.startdate = startdate;
         this.nickname = nickname;
+        this.courses = courses;
+        this.scoreList = scoreList;
     }
 
     public long getId() {
@@ -124,5 +128,13 @@ public class Teacher {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+    public List<Score> getScoreList() {
+        return scoreList;
+    }
+
+    public void setScoreList(List<Score> scoreList) {
+        this.scoreList = scoreList;
     }
 }

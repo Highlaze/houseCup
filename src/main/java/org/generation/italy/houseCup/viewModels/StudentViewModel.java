@@ -51,10 +51,13 @@ public class StudentViewModel {
     }
 
     public Student toStudent() {
-        return new Student(this.id, this.firstname, this.surname, this.dob, this.sex, this.mail, this.phone, this.background, this.education, this.isPref, null, null);
+        return new Student(this.id, this.firstname, this.surname, this.dob, this.sex, this.mail, this.phone,
+                this.background, this.education, this.isPref, null, null, List.of());
     }
     public static StudentViewModel fromStudent(Student s) {
-        return new StudentViewModel(s.getId(), s.getFirstname(), s.getSurname(), s.getDob(), s.getSex(), s.getMail(), s.getPhone(), s.getBackground(), s.getEducation(), s.getIsPref(), s.getCourse().getId(), s.getHouse().getId(), s.getCourse().getClassName(), s.getHouse().getHouseName());
+        return new StudentViewModel(s.getId(), s.getFirstname(), s.getSurname(), s.getDob(), s.getSex(), s.getMail(),
+                s.getPhone(), s.getBackground(), s.getEducation(), s.getIsPref(), s.getCourse().getId(),
+                s.getHouse().getId(), s.getCourse().getClassName(), s.getHouse().getHouseName());
     }
 
     public long getId() {

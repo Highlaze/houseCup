@@ -3,6 +3,7 @@ package org.generation.italy.houseCup.model.services;
 import org.generation.italy.houseCup.model.entities.Course;
 import org.generation.italy.houseCup.model.entities.House;
 import org.generation.italy.houseCup.model.entities.Student;
+import org.generation.italy.houseCup.model.entities.Teacher;
 import org.generation.italy.houseCup.model.repositories.CourseRepositoryJpa;
 import org.generation.italy.houseCup.model.repositories.HouseRepositoryJpa;
 import org.generation.italy.houseCup.model.repositories.StudentRepositoryJpa;
@@ -44,6 +45,16 @@ public class RegisterServiceJpa implements RegisterService{
     @Override
     public Optional<House> findHouseById(long id) {
         return houseRepo.findById(id);
+    }
+
+    @Override
+    public List<Teacher> findAllTeachers() { // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah
+        return List.of();
+    }
+
+    @Override
+    public List<Student> findAllStudents() {
+        return studentRepo.findAll();
     }
 
     @Override
